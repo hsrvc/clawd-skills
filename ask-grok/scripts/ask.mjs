@@ -57,6 +57,9 @@ async function main() {
         await page.bringToFront();
     }
 
+    // Increase default timeout for long Grok responses (2 minutes)
+    page.setDefaultTimeout(120000);
+
     // Wait for input
     const inputSelector = 'div.tiptap.ProseMirror[contenteditable="true"]';
     try {
